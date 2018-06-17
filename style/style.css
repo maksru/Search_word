@@ -1,0 +1,69 @@
+body, html {
+	font-family: 'Roboto', sans-serif;
+	width: 100%;
+	margin: 0;
+}
+
+/*--------------------------------------------------------------*/
+/*Форма загрузки текста на сервер.*/
+form {
+	display: flex; 
+	flex-wrap: wrap;
+	flex-direction: column;
+	align-items: center;
+	width: 500px;
+	border: 2px solid #5097ea;
+	padding: 20px;
+	justify-content: center;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+/*--------------------------------------------------------------*/
+/*Основной контейнер*/
+.container {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+    overflow: auto;
+}
+
+/*--------------------------------------------------------------*/
+/*Контайнер для названия текста.*/
+.container-box {
+	display: flex;
+    flex-direction: column;
+    border: 1px solid black;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, .6);
+    padding: 20px;
+    margin-bottom: 5px;
+    width: 300px;
+}
+
+/*--------------------------------------------------------------*/
+/*Контайнер для текста.*/
+.add-coment-box {
+	display: flex;
+    flex-direction: column;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, .6);
+    margin-bottom: 10px;
+    padding: 20px;
+    width: 300px;
+    height: 600px;
+}
+
+/*--------------------------------------------------------------*/
+/*Кнопка отправки текста на сервер.*/
+.submit_button {
+	width: 100px;
+	padding: 10px;
+	background-color: #5097ea;
+	border: 1px solid black;
+	border-radius: 4px;
+	text-align: center;
+    box-sizing: border-box;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, .6);
+	margin-top: 5px;
+	margin-bottom: 15px;
+}
