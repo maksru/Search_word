@@ -67,3 +67,16 @@ form {
 	margin-top: 5px;
 	margin-bottom: 15px;
 }
+/*--------------------------------------------------------------*/
+/*Блок вывода всего текста.*/
+#text_block {
+	display: flex; 
+	flex-wrap: wrap;
+	flex-direction: column;
+	align-items: center;
+	width: 500px;
+	padding: 20px;
+	justify-content: center;
+	margin-left: auto;
+	margin-right: auto;
+}

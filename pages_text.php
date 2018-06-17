@@ -12,53 +12,42 @@
 	<title>Pages text</title>
 </head>
 <body>
-	<?php
-		$sql = "SELECT * FROM `poem`";
-		$sql_2 = "SELECT * FROM `word`";
-		$data = $pdo->query($sql);
-		$data_2 = $pdo->query($sql_2);
+	<div class="container">
+		<div class="row">
+			<div class="col-2"></div>
+			<div class="col-8" id="text_block">
+				<?php
+					$sql = "SELECT * FROM `poem`";
+					$sql_2 = "SELECT * FROM `word`";
+					$data = $pdo->query($sql);
+					$data_2 = $pdo->query($sql_2);
 
-		$rezult = $data->fetchAll();
-		$rezult_2 = $data_2->fetchAll();
+					$rezult = $data->fetchAll();
+					$rezult_2 = $data_2->fetchAll();
 
-		function 	search_word($text, $word)
-		{
-			$array = explode(" ", $text);
-			$i = 0;
-			while ($array[$i])
-			{
-				$d = 0;
-				while ($word[$d])
-				{
-					if ($array[$i] == $word[$d])
+					function 	search_word($text, $word)
 					{
-						$array[$i] = "<b style='color:red;'>".$array[$i]."</b>";
+						$regexp_request = implode("|", $word);
+						$test = preg_replace("/(".$regexp_request.")/im", "<span style='color:red;'>$1</span>", nl2br($text));
+						echo ("<div class='container-box'>".$test."</div>");
 					}
-					$d++;
-				}
-				$i++;
-			}
-			return ($array);
-		}
 
-		$my_array = array();
-		$count = 0;
-		foreach ($rezult_2 as $rez)
-		{
-			$my_array[$count] = $rez['word'];
-			$count++;
-		}
-		foreach ($rezult as $value)
-		{
+					$my_array = array();
+					$count = 0;
+					foreach ($rezult_2 as $rez)
+					{
+						$my_array[$count] = $rez['word'];
+						$count++;
+					}
 
-			$des = search_word($value['text_poem'], $my_array);
-			$ds = 0;
-			while ($des[$ds])
-			{
-				echo $des[$ds]." ";
-				$ds++;
-			}
-		}
-	?>
+					foreach ($rezult as $value)
+					{
+						$des = search_word($value['text_poem'], $my_array);
+					}
+				?>
+				</div>
+			<div class="col-2"></div>
+		</div>
+	</div>
 </body>
 </html>
