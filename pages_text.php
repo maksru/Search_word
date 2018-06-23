@@ -19,7 +19,7 @@
 			<div class="col-2"></div>
 			<div class="col-8" id="text_block">
 				<?php
-					//Запросы в базу дангных.
+					//Запросы в базу данных.
 					$sql = "SELECT * FROM `poem`";
 					$sql_2 = "SELECT * FROM `word`";
 					$data = $pdo->query($sql);

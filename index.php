@@ -19,10 +19,11 @@
 			<div class="col-2"></div>
 			<div class="col-8">
 				<br >
+				<div id="error" class="error" style="display: none;">Error</div>
 				<form id="myform" action="app/download_text.php" method="POST">
 					<input id="name" type="text" name="name_p" placeholder="Введіть назву вірша..." class="container-box">
 					<textarea id="text" name="text_p" class="add-coment-box" placeholder="Вставте текст..."></textarea>
-					<input type="submit" name="button" value="Відправити" class="submit_button">
+					<input type="submit" name="button" value="Відправити" id="submit_button" class="submit_button" onclick="sendToSql()">
 				</form>
 				<br >
 				<div class="download_word">
@@ -32,28 +33,6 @@
 			<div class="col-2"></div>
 		</div>
 	</div>
-	<!-- <script src="js/script.js" type="text/javascript"></script> -->
-	<script>
-		$().ready(function() {
-			// $.validator.methods.email = function( value, element ) {
-				//	console.log(element);
-				// return this.optional( element ) || /^[0-9a-z-\.]+\@[0-9a-z-]{2,}\.[a-z.]{2,}$/i.test( value );
-			// }
-			$("#myform").validate({
-				rules: {
-					name_p: {
-						required: true
-					}
-				},
-				messages: {
-					name_p: {
-						required:"Enter plz Name"
-					}
-				}
-			});
-		
-			
-		});
-	</script>
+	<script src="js/script_index.js" type="text/javascript"></script>
 </body>
 </html> 

@@ -14,5 +14,12 @@
 			$pdo->exec($sql);
 			header("refresh:0;../download_word.php");
 		}
+		else
+		{
+			echo "<script type=\"text/javascript\">".
+				"alert('Таке слово вже існує!');".
+				"</script>";
+			header("refresh:0;../download_word.php");
+		}
 	}
 ?>

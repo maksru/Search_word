@@ -6,7 +6,7 @@ try {
 	// Структура таблицы `poem`
 	$sql = "CREATE TABLE IF NOT EXISTS `poem` (
 			`id` int(11) UNSIGNED NOT NULL PRIMARY KEY AUTO_INCREMENT,
-			`time_add_poem` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
+			`time_add_poem` datetime NOT NULL,
 			`name_poem` varchar(255) NOT NULL,
 			`text_poem` text NOT NULL
 			) ENGINE=InnoDB DEFAULT CHARSET=utf8;";

@@ -15,5 +15,12 @@
 			$pdo->exec($sql);
 			header("refresh:0;../pages_text.php");
 		}
+		else
+		{
+			echo "<script type=\"text/javascript\">".
+				"alert('Такий текст вже існує!');".
+				"</script>";
+			header("refresh:0;../index.php");
+		}
 	}
 ?>
