@@ -34,7 +34,6 @@ form {
 .container-box {
 	display: flex;
     flex-direction: column;
-    border: 1px solid black;
     box-shadow: 0 1px 4px rgba(0, 0, 0, .6);
     padding: 20px;
     margin-bottom: 5px;
@@ -79,4 +78,28 @@ form {
 	justify-content: center;
 	margin-left: auto;
 	margin-right: auto;
+}
+
+.container-box-add {
+	display: flex;
+    flex-direction: column;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, .6);
+    padding: 20px;
+    margin-bottom: 5px;
+    width: auto;
+}
+
+/*--------------------------------------------------------------*/
+/*Блок ввода поисковых слов.*/
+.download_word {
+	display: flex; 
+	flex-wrap: wrap;
+	flex-direction: column;
+	align-items: center;
+	padding: 20px 20px 20px 20px;
+	text-align: center;
+	border: 2px solid #5097ea;
+	margin-left: auto;
+	margin-right: auto;
+	width: 500px;	
 }
