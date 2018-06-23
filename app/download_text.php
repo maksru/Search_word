@@ -17,10 +17,7 @@
 		}
 		else
 		{
-			echo "<script type=\"text/javascript\">".
-				"alert('Такий текст вже існує!');".
-				"</script>";
-			header("refresh:0;../index.php");
+			
 		}
 	}
 ?>

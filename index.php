@@ -19,11 +19,11 @@
 			<div class="col-2"></div>
 			<div class="col-8">
 				<br >
-				<div id="error" class="error" style="display: none;">Error</div>
 				<form id="myform" action="app/download_text.php" method="POST">
+					<div id="error" class="error" style="display: none; color: red;"></div>
 					<input id="name" type="text" name="name_p" placeholder="Введіть назву вірша..." class="container-box">
 					<textarea id="text" name="text_p" class="add-coment-box" placeholder="Вставте текст..."></textarea>
-					<input type="submit" name="button" value="Відправити" id="submit_button" class="submit_button" onclick="sendToSql()">
+					<input type="submit" name="button" value="Відправити" id="submit_button" class="submit_button">
 				</form>
 				<br >
 				<div class="download_word">

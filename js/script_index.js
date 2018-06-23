@@ -6,19 +6,26 @@ $().ready(function() {
 	$("#myform").validate({
 		rules: {
 			name_p: {
-				required: true
+				required: true,
+				minlength: 3
 			},
 			text_p: {
-				required: true
+				required: true,
+				minlength: 5
 			}
 		},
 		messages: {
 			name_p: {
-				required: "Введіть назву вірша..."
+				required: "*Введіть назву вірша...",
+				minlength: "*Назва повинна бути більше 3 літер"
 			},
 			text_p: {
-				required: "Введіть текст..."
+				required: "*Введіть текст...",
+				minlength: "*Текст  бути більше 5 літер "
 			}
 		}
 	});
+
+	
 });
+

@@ -7,7 +7,7 @@ $().ready(function() {
 		},
 		messages: {
 			word: {
-				required:"Введіть будьласка слово..."
+				required:"Введіть будь ласка слово..."
 			}
 		}
 	});
