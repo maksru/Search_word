@@ -12,14 +12,9 @@
 		{
 			$sql = "INSERT INTO `word` (word) VALUES ('" . $word_verse . "')";
 			$pdo->exec($sql);
-			header("refresh:0;../download_word.php");
+			echo "OK";
+			return;
 		}
-		else
-		{
-			echo "<script type=\"text/javascript\">".
-				"alert('Таке слово вже існує!');".
-				"</script>";
-			header("refresh:0;../download_word.php");
-		}
+		echo "Error";
 	}
 ?>

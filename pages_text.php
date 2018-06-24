@@ -35,13 +35,13 @@
 					}
 
 					//Функция поиска слова в тексте.
-					function 	search_word($text, $word)
+					function 	search_word($name,$text, $word)
 					{
 						if (!empty($word))
 						{
 							$regexp_request = implode("|", $word);
 							$text_p = preg_replace("/(".$regexp_request.")/im", "<b style='color:".random_html_color()."';>$1</b>", $text);
-							print("<div class='container-box-add	'><pre>".$text_p."</pre></div>");	
+							print("<div class='container-box-add'><pre>".$name."<br >".$text_p."</pre></div>");	
 						}
 						else
 						{
@@ -61,11 +61,11 @@
 					//Поиск слов в тексте.
 					foreach ($rezult as $value)
 					{
-						$des = search_word($value['text_poem'], $my_array);
+						$des = search_word($value['name_poem'],$value['text_poem'], $my_array);
 					}
 				?>
-				<p><a href="#top">Наверх</a></p>
-				<p><a href="index.php">Назад</a></p>
+				<p class="submit_button"><a href="#top" style="color: black; text-decoration: none;">Наверх</a></p>
+				<p class="submit_button"><a href="index.php" style="color: black; text-decoration: none;">Додати текст</a></p>
 				</div>
 			<div class="col-2"></div>
 		</div>

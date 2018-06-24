@@ -13,11 +13,9 @@
 		{
 			$sql = "INSERT INTO `poem` (time_add_poem, name_poem, text_poem) VALUES (now(), '" . $name_verse . "', '" . $text_verse . "')";
 			$pdo->exec($sql);
-			header("refresh:0;../pages_text.php");
+			echo "OK";
+			return;
 		}
-		else
-		{
-			
-		}
+		echo "Error";
 	}
 ?>

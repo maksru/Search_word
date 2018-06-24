@@ -1,8 +1,4 @@
-$().ready(function() {
-// $.validator.methods.email = function( value, element ) {
-	//	console.log(element);
-	// return this.optional( element ) || /^[0-9a-z-\.]+\@[0-9a-z-]{2,}\.[a-z.]{2,}$/i.test( value );
-// }
+$(document).ready(function() {
 	$("#myform").validate({
 		rules: {
 			name_p: {
@@ -26,6 +22,51 @@ $().ready(function() {
 		}
 	});
 
-	
+	$('#myform').submit(function() {
+		var request = $.ajax({
+			type: "POST",
+			url: "app/download_text.php",
+			data: $(this).serialize()
+		});
+		request.done(function(data) {
+			if (data == "OK")
+			{
+				$('.js-overlay-thank-you').fadeIn();
+				$(this).find('input').val('');
+				$('#myform').trigger('reset');
+			} 
+			else
+			{
+				$('.js-overlay-thank-you_ko').fadeIn();
+				$(this).find('input').val('');
+				$('#myform').trigger('reset');
+			}
+		});
+		return false;
+	});
+});
+
+// Закрыть попап «Cпасибо»
+$('.js-close-thank-you').click(function() { // по клику на крестик
+	$('.js-overlay-thank-you').fadeOut();
+});
+
+$(document).mouseup(function (e) { // по клику вне попапа
+    var popup = $('.popup');
+    if (e.target!=popup[0]&&popup.has(e.target).length === 0){
+        $('.js-overlay-thank-you').fadeOut();
+    }
+});
+
+// Закрыть попап «Ошибка»
+$('.js-close-thank-you_ko').click(function() { // по клику на крестик
+	$('.js-overlay-thank-you_ko').fadeOut();
+});
+
+$(document).mouseup(function (e) { // по клику вне попапа
+    var popup = $('.popup_ko');
+    if (e.target!=popup[0]&&popup.has(e.target).length === 0){
+        $('.js-overlay-thank-you_ko').fadeOut();
+    }
 });
 
