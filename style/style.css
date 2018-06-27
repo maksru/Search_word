@@ -94,7 +94,7 @@ form {
 }
 
 /*--------------------------------------------------------------*/
-/*Блок ввода поисковых слов.*/
+/*Кнопки на главной странице.*/
 .download_word {
 	display: flex; 
 	flex-wrap: wrap;
@@ -111,7 +111,20 @@ form {
 .download_word a{
 	text-decoration: none;
 }
-
+/*--------------------------------------------------------------*/
+/*Блок ввода поисковых слов .*/
+.word-in-bd {
+	display: flex; 
+	flex-wrap: wrap;
+	flex-direction: column;
+	align-items: center;
+	width: 500px;
+	border: 2px solid #5097ea;
+	padding: 20px;
+	justify-content: center;
+	margin-left: auto;
+	margin-right: auto;
+}
 
 
 

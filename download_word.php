@@ -12,7 +12,7 @@
 	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.0/jquery.js"></script>
 	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.15.0/jquery.validate.min.js"></script>
 	<meta charset="utf-8">
-	<title>Download word</title>
+	<title>Додати слово</title>
 </head>
 <body>
 	<div class="container">
@@ -24,6 +24,19 @@
 					<input type="submit" name="button" value="Отправить" class="submit_button">
 					<button class="submit_button"><a href="index.php" style="color: black; text-decoration: none;">Назад</a></button>
 				</form>
+				<br />
+				<div class="word-in-bd">
+					<h3>Слова в базі данних</h3>
+					<?php
+						$sql = "SELECT * FROM `word`";
+						$data = $pdo->query($sql);
+						$rezult = $data->fetchAll();
+						foreach ($rezult as $value)
+						{
+							echo($value['word'].'<br />');
+						}  
+					?>
+				</div>
 			</div>
 			<div class="col-2"></div>
 		</div>

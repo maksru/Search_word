@@ -2,6 +2,7 @@
 	require_once "../config/connect_bd.php";
 	session_start();
 	header('Content-Type: text/html; charset=utf-8');
+		
 	if (isset($_POST) && !empty($_POST))
 	{
 		$word_verse = $_POST['word'];

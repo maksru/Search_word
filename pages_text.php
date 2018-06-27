@@ -10,7 +10,7 @@
 	<link rel="stylesheet" type="text/css" href="style/style.css">
 	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
 	<meta charset="utf-8">
-	<title>Pages text</title>
+	<title>Сторінка з текстом</title>
 </head>
 <body>
 	<a name="top"></a>
