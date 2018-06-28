@@ -15,7 +15,7 @@ $().ready(function() {
 	$('#form_word').submit(function() {
 		var request = $.ajax({
 			type: "POST",
-			url: "app/add_download_word.php",
+			url: "../app/add_download_word.php",
 			data: $(this).serialize()
 		});
 		request.done(function(data) {

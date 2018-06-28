@@ -25,7 +25,7 @@ $(document).ready(function() {
 	$('#myform').submit(function() {
 		var request = $.ajax({
 			type: "POST",
-			url: "app/download_text.php",
+			url: "../app/download_text.php",
 			data: $(this).serialize()
 		});
 		request.done(function(data) {

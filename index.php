@@ -41,7 +41,7 @@
 
 	<footer>
 		<div class="overlay js-overlay-thank-you">
-			<div class="popup_ko js-thank-you_ko">
+			<div class="popup js-thank-you">
 				<h2>Текст відправленний.</h2>
 				<div class="close-popup js-close-thank-you"></div>
 			</div>
