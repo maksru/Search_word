@@ -4,10 +4,10 @@
 	$word_del = $_POST['new_word'];
 	if (isset($_POST) && !empty($_POST)) 
 	{
-		$del = "SELECT * FROM `word` WHERE addword='".$word_del."' ";
+		$del = "SELECT * FROM `word` WHERE id_word='".$word_del."' ";
 		$row = $pdo->query($del);
 		$del_pas = $row->fetch();
-		$sql = "DELETE FROM `word` WHERE addword='".$word_del."'";
+		$sql = "DELETE FROM `word` WHERE id_word='".$word_del."'";
 		$pdo->query($sql);
 		echo "Success";
 	}

@@ -50,17 +50,15 @@ $('.js-close-thank-you_ko').click(function() { // по клику на крес�
 });
 
 function del_word (del) {
-	var word_new = document.getElementById("new_word");
-	var data = "new_word=" + word_new.innerHTML;
-	console.log(data);
-	// var xhttp = new XMLHttpRequest();
-	// xhttp.open("POST", "../app/delWord.php", true);
-	// xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-	// xhttp.send(data);
-	// xhttp.onreadystatechange = function() {
-	// 	if (this.readyState == 4 && this.status == 200) {
-	// 		// window.location.reload();
-	// 		console.log(this.responseText);
-	// 	}
-	// };
+	var data = "new_word=" + del;
+	var xhttp = new XMLHttpRequest();
+	xhttp.open("POST", "../app/delWord.php", true);
+	xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+	xhttp.send(data);
+	xhttp.onreadystatechange = function() {
+		if (this.readyState == 4 && this.status == 200) {
+			window.location.reload();
+			console.log(this.responseText);
+		}
+	};
 }
