@@ -33,7 +33,8 @@
 						$rezult = $data->fetchAll();
 						foreach ($rezult as $value)
 						{
-							echo($value['word'].'<br />');
+							echo('<div id="new_word">'.$value['addword'].'</div><br />');
+							echo ('<div><button class="sbutton" onclick="del_word('.$value['id_word'].')">Видалити</button></div>');
 						}  
 					?>
 				</div>

@@ -35,17 +35,17 @@
 					}
 
 					//Функция поиска слова в тексте.
-					function 	search_word($name,$text, $word)
+					function 	search_word($text, $word)
 					{
 						if (!empty($word))
 						{
-							$regexp_request = implode("|", $word);
-							$text_p = preg_replace("/(".$regexp_request.")/im", "<b style='color:".random_html_color()."';>$1</b>", $text);
-							print("<div class='container-box-add'><pre>".$name."<br >".$text_p."</pre></div>");	
+							// $regexp_request =implode("|", $word);
+							$text_p = preg_replace("/(".implode('|', $word) .")/iu", "<b style='color:".random_html_color()."'>$1</b>", $text);
+							print("<div class='container-box-add'><pre>".$text_p."</pre></div>");
 						}
 						else
 						{
-							print("<div class='container-box-add'>".$text."</div>");
+							print("<div class='container-box-add'><pre>".$text."</pre></div>");
 						}
 					}
 
@@ -54,14 +54,13 @@
 					$count = 0;
 					foreach ($rezult_2 as $rez)
 					{
-						$my_array[$count] = $rez['word'];
+						$my_array[$count] = $rez['addword'];
 						$count++;
 					}
-
 					//Поиск слов в тексте.
 					foreach ($rezult as $value)
 					{
-						$des = search_word($value['name_poem'],$value['text_poem'], $my_array);
+						$des = search_word($value['text_poem'], $my_array);
 					}
 				?>
 				<p class="submit_button"><a href="#top" style="color: black; text-decoration: none;">Наверх</a></p>

@@ -30,6 +30,7 @@ $().ready(function() {
 				$('.js-overlay-thank-you_ko').fadeIn();
 				$(this).find('input').val('');
 				$('#form_word').trigger('reset');
+
 			}
 		});
 		return false;
@@ -39,23 +40,27 @@ $().ready(function() {
 // Закрыть попап «Cпасибо»
 $('.js-close-thank-you').click(function() { // по клику на крестик
 	$('.js-overlay-thank-you').fadeOut();
-});
-
-$(document).mouseup(function (e) { // по клику вне попапа
-    var popup = $('.popup');
-    if (e.target!=popup[0]&&popup.has(e.target).length === 0){
-        $('.js-overlay-thank-you').fadeOut();
-    }
+	window.location.reload();
 });
 
 // Закрыть попап «Ошибка»
 $('.js-close-thank-you_ko').click(function() { // по клику на крестик
 	$('.js-overlay-thank-you_ko').fadeOut();
+	window.location.reload();
 });
 
-$(document).mouseup(function (e) { // по клику вне попапа
-    var popup = $('.popup_ko');
-    if (e.target!=popup[0]&&popup.has(e.target).length === 0){
-        $('.js-overlay-thank-you_ko').fadeOut();
-    }
-});
+function del_word (del) {
+	var word_new = document.getElementById("new_word");
+	var data = "new_word=" + word_new.innerHTML;
+	console.log(data);
+	// var xhttp = new XMLHttpRequest();
+	// xhttp.open("POST", "../app/delWord.php", true);
+	// xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+	// xhttp.send(data);
+	// xhttp.onreadystatechange = function() {
+	// 	if (this.readyState == 4 && this.status == 200) {
+	// 		// window.location.reload();
+	// 		console.log(this.responseText);
+	// 	}
+	// };
+}
