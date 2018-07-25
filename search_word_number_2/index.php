@@ -31,6 +31,10 @@
 				</div>
 				<br >
 				<div class="download_word">
+					<a href="compare_the_text.php" style="color: black">Порівняти текст.</a>
+				</div>
+				<br >
+				<div class="download_word">
 					<a href="pages_text.php" style="color: black">Переглянути текст.</a>
 				</div>
 				<br >

@@ -17,7 +17,10 @@
 <body>
 	<div class="container">
 		<div class="row">
-			<div class="col-12">
+			<div class="col-1">
+				<a href="index.php"><img src="img/left2.png"></a>
+			</div>
+			<div class="col-11">
 				<div class="word-in-bd">
 					<h3 class="head">Слова в базі данних</h3>
 					<form id="dell_form" method="POST" action="app/delWord.php">
@@ -29,9 +32,8 @@
 							{
 								echo('<input type="checkbox" name="checkbox[]" value="'.$value['id_word'].'">'.$value['addword'].' ');
 							}
-							// echo('<div><button class="sbutton" onclick="del_word('.$value['id_word'].')">Видалити</button></div>');
 						?>
-						<div><input type="submit" name="dell" class="sbutton" value="Видалити"></div>
+						<div class="divBut"><input type="submit" name="dell" class="sbutton" value="Видалити"></div>
 					</form>
 				</div>
 			</div>
@@ -43,7 +45,7 @@
 				<form id="form_word" class="idform" name="form_word">
 					<input type="text" id="word" name="word" placeholder="Введите слово..." class="container-box">
 					<input type="submit" name="button" value="Отправить" class="submit_button">
-					<button class="submit_button"><a href="index.php" style="color: black; text-decoration: none;">Назад</a></button>
+					<!-- <button class="submit_button"><a href="index.php" style="color: black; text-decoration: none;">Назад</a></button> -->
 				</form>
 			</div>
 			<div class="col-2"></div>

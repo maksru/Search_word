@@ -41,11 +41,11 @@
 						{
 							// $regexp_request =implode("|", $word);
 							$text_p = preg_replace("/(".implode('|', $word) .")/iu", "<b style='color:".random_html_color()."'>$1</b>", $text);
-							print("<div class='container-box-add'><pre>".$text_p."</pre></div>");
+							echo("<div class='container-box-add'><pre>".$text_p."</pre></div>");
 						}
 						else
 						{
-							print("<div class='container-box-add'><pre>".$text."</pre></div>");
+							echo("<div class='container-box-add'><pre>".$text."</pre></div>");
 						}
 					}
 
@@ -65,7 +65,7 @@
 				?>
 				<p class="submit_button"><a href="#top" style="color: black; text-decoration: none;">Наверх</a></p>
 				<p class="submit_button"><a href="index.php" style="color: black; text-decoration: none;">Додати текст</a></p>
-				</div>
+			</div>
 			<div class="col-2"></div>
 		</div>
 	</div>
