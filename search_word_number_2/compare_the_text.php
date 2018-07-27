@@ -25,95 +25,94 @@
 						<?php
 							//Запросы в базу данных.
 							$sql = "SELECT * FROM `compare` WHERE `public`='1'";
-							//$sql_2 = "SELECT * FROM `word`";
+							$sql_2 = "SELECT * FROM `word`";
 							$data = $pdo->query($sql);
-							//$data_2 = $pdo->query($sql_2);
+							$data_2 = $pdo->query($sql_2);
 							$rezult = $data->fetchAll();
-							//$rezult_2 = $data_2->fetchAll();
-							print_r($rezult);
+							$rezult_2 = $data_2->fetchAll();
 							//Функция получения случайного цвета.
-							// function random_html_color()
-							// {
-							//     return sprintf( '#%02X%02X%02X', rand(0, 255), rand(0, 255), rand(0, 255) );
-							// }
+							function random_html_color()
+							{
+							    return sprintf( '#%02X%02X%02X', rand(0, 255), rand(0, 255), rand(0, 255) );
+							}
 
-							// //Функция поиска слова в тексте.
-							// function 	search_word($text, $word)
-							// {
-							// 	if (!empty($word))
-							// 	{
-							// 		// $regexp_request = implode("|", $word);
-							// 		$text_p = preg_replace("/(".implode('|', $word) .")/iu", "<b style='color:".random_html_color()."'>$1</b>", $text);
-							// 		echo($text_p);
-							// 	}
-							// 	else
-							// 	{
-							// 		echo($text);
-							// 	}
-							// }
+							//Функция поиска слова в тексте.
+							function 	search_word($text, $word)
+							{
+								if (!empty($word))
+								{
+									// $regexp_request = implode("|", $word);
+									$text_p = preg_replace("/(".implode('|', $word) .")/iu", "<b style='color:".random_html_color()."'>$1</b>", $text);
+									echo($text_p);
+								}
+								else
+								{
+									echo($text);
+								}
+							}
 
-							// //Массив слов.
-							// $my_array = array();
-							// $count = 0;
-							// foreach ($rezult_2 as $rez)
-							// {
-							// 	$my_array[$count] = $rez['addword'];
-							// 	$count++;
-							// }
-							// // //Поиск слов в тексте.
-							// foreach ($rezult as $value)
-							// {
-							// 	$des = search_word($value['comparetext'], $my_array);
-							// }
+							//Массив слов.
+							$my_array = array();
+							$count = 0;
+							foreach ($rezult_2 as $rez)
+							{
+								$my_array[$count] = $rez['addword'];
+								$count++;
+							}
+							// //Поиск слов в тексте.
+							foreach ($rezult as $value)
+							{
+								$des = search_word($value['comparetext'], $my_array);
+							}
 						?>
 					</textarea>
 					<textarea id='output_text_2' name="output_text_2" required>
 						<?php
-							// //Запросы в базу данных.
-							// $sql = "SELECT * FROM `compare` WHERE `public`='2'";
-							// $sql_2 = "SELECT * FROM `word`";
-							// $data = $pdo->query($sql);
-							// $data_2 = $pdo->query($sql_2);
-							// $rezult = $data->fetchAll();
-							// $rezult_2 = $data_2->fetchAll();
+							//Запросы в базу данных.
+							$sql = "SELECT * FROM `compare` WHERE `public`='2'";
+							$sql_2 = "SELECT * FROM `word`";
+							$data = $pdo->query($sql);
+							$data_2 = $pdo->query($sql_2);
+							$rezult = $data->fetchAll();
+							$rezult_2 = $data_2->fetchAll();
+							//Функция получения случайного цвета.
+							function random_html_color_1()
+							{
+							    return sprintf( '#%02X%02X%02X', rand(0, 255), rand(0, 255), rand(0, 255) );
+							}
 
-							// //Функция получения случайного цвета.
-							// function random_html_color_2()
-							// {
-							//     return sprintf( '#%02X%02X%02X', rand(0, 255), rand(0, 255), rand(0, 255) );
-							// }
+							//Функция поиска слова в тексте.
+							function 	search_word_1($text, $word)
+							{
+								if (!empty($word))
+								{
+									// $regexp_request = implode("|", $word);
+									$text_p = preg_replace("/(".implode('|', $word) .")/iu", "<b style='color:".random_html_color_1()."'>$1</b>", $text);
+									echo($text_p);
+								}
+								else
+								{
+									echo($text);
+								}
+							}
 
-							// //Функция поиска слова в тексте.
-							// function 	search_word_2($text, $word)
-							// {
-							// 	if (!empty($word))
-							// 	{
-							// 		// $regexp_request = implode("|", $word);
-							// 		$text_p = preg_replace("/(".implode('|', $word) .")/iu", "<b style='color:".random_html_color_2()."'>$1</b>", $text);
-							// 		echo($text_p);
-							// 	}
-							// 	else
-							// 	{
-							// 		echo($text);
-							// 	}
-							// }
-
-							// //Массив слов.
-							// $my_array = array();
-							// $count = 0;
-							// foreach ($rezult_2 as $rez)
-							// {
-							// 	$my_array[$count] = $rez['addword'];
-							// 	$count++;
-							// }
-							// // //Поиск слов в тексте.
-							// foreach ($rezult as $value)
-							// {
-							// 	$des = search_word_2($value['comparetext'], $my_array);
-							// }
+							//Массив слов.
+							$my_array = array();
+							$count = 0;
+							foreach ($rezult_2 as $rez)
+							{
+								$my_array[$count] = $rez['addword'];
+								$count++;
+							}
+							// //Поиск слов в тексте.
+							foreach ($rezult as $value)
+							{
+								$des = search_word_1($value['comparetext'], $my_array);
+							}
 						?>
 					</textarea>
-					<input type="submit" name="compare" value="Перевірити">
+					<input type="submit" name="compare" class="download_word" value="Перевірити">
+					<input type="submit" name="reset" class="download_word" value="Очистити">
 				</form>
 				<!-- <input type="button" value="Clear" onclick="clearContentText1()"> -->
 				<!-- <input type="button" value="Clear" onclick="clearContentText2()"> -->
